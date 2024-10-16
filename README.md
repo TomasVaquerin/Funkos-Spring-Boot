@@ -21,6 +21,8 @@
  &emsp; &emsp; &emsp; &emsp; ![src][src] funkos
  <br>
  &emsp; &emsp; &emsp; &emsp; &emsp; ![controllers][controllers] controllers
+ <br>
+ &emsp; &emsp; &emsp; &emsp; &emsp; ![controllers][model] models
 
  
  
@@ -57,3 +59,4 @@
 <!--Variables-->
 [controllers]: https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/icons/plugins/ruby/rails/projectView/controllersFolder.svg
 [src]: https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/icons/modules/generatedSourceRoot.svg
+[model]: https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/icons/nodes/models.svg
