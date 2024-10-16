@@ -23,6 +23,8 @@
  &emsp; &emsp; &emsp; &emsp; &emsp; ![interface][interface] Repository
  <br>
  &emsp; &emsp; &emsp; &emsp; ![src][src] funkos
+  <br>
+ &emsp; &emsp; &emsp; &emsp; &emsp; ![dto][dto] dto
  <br>
  &emsp; &emsp; &emsp; &emsp; &emsp; ![controllers][controllers] controllers
  <br>
@@ -59,3 +61,4 @@
 [src]: https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/icons/modules/generatedSourceRoot.svg
 [model]: https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/icons/nodes/models.svg
 [interface]: https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/glyphs/expui/nodes/interface.svg
+[dto]: https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/icons/nodes/models.svg
