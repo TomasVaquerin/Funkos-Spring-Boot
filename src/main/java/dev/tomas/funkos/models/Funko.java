@@ -1,8 +1,8 @@
 package dev.tomas.funkos.models;
 
+import dev.tomas.funkos.dto.FunkoDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -23,4 +23,10 @@ public class Funko {
         this.updateAt = LocalDateTime.now();
     }
 
+    public void update(FunkoDto dto) {
+        this.nombre = dto.getNombre();
+        this.tipo = dto.getTipo();
+        this.precio = dto.getPrecio();
+        this.updateAt = LocalDateTime.now();
+    }
 }
