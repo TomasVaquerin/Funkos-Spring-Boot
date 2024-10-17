@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
+//poner @cacheconfig (cacheName = {"Funkos"})
 public class FunkoServiceImpl implements FunkoService {
     private final Logger logger = LoggerFactory.getLogger(FunkoServiceImpl.class);
     private final FunkoRepository funkoRepository;
@@ -47,5 +48,13 @@ public class FunkoServiceImpl implements FunkoService {
     public Funko deleteById(UUID id) {
         logger.info("Eliminando Funko con id: {}", id);
         return funkoRepository.deleteById(id);
+    }
+
+    @Override
+    public Funko update(UUID id, FunkoDto dto) {
+        logger.info("Actualizando Funko con id: {}", id);
+        Funko funko = funkoMapper.toFunko(dto);
+        funko.setId(id);
+        return funkoRepository.update(id, funko);
     }
 }

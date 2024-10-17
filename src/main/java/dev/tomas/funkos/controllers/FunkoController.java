@@ -49,7 +49,7 @@ public class FunkoController implements Controller<Funko, UUID> {
 
     @Override
     @PostMapping
-    public ResponseEntity<Funko> create(@RequestBody FunkoDto dto) {
+    public ResponseEntity<Funko> create(@RequestBody FunkoDto dto) { ///@Validator para validar que los datos estan bien
         logger.info("Creando nuevo Funko: {}", dto);
         Funko savedFunko = service.save(dto);
         return ResponseEntity.ok(savedFunko);
@@ -63,8 +63,7 @@ public class FunkoController implements Controller<Funko, UUID> {
             logger.warn(FUNKO_NOT_FOUND, id);
             return ResponseEntity.notFound().build();
         }
-        Funko updatedFunko = service.save(dto);
-        updatedFunko.setId(id);
+        Funko updatedFunko = service.update(id, dto);
         return ResponseEntity.ok(updatedFunko);
     }
 
@@ -80,4 +79,7 @@ public class FunkoController implements Controller<Funko, UUID> {
             return ResponseEntity.notFound().build();
         }
     }
+
+
+    //poner el metodo que tice que los campos validados y errors
 }

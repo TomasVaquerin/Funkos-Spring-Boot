@@ -11,4 +11,6 @@ public interface Repository<T, I> {
     List<T> findAll();
 
     T deleteById(I id);
+
+    T update(I id, T f);
 }
