@@ -2,9 +2,8 @@ package dev.tomas.funkos.controllers;
 
 import dev.tomas.common.Controller;
 import dev.tomas.funkos.dto.FunkoDto;
-import dev.tomas.funkos.mapper.FunkoMapper;
 import dev.tomas.funkos.models.Funko;
-import dev.tomas.funkos.repository.FunkoRepositoryImpl;
+import dev.tomas.funkos.service.FunkoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,21 +18,19 @@ import java.util.UUID;
 public class FunkoController implements Controller<Funko, UUID> {
     private static final String FUNKO_NOT_FOUND = "Funko con id: {} no encontrado";
 
-    private final FunkoRepositoryImpl repository;
-    private final FunkoMapper mapper;
+    private final FunkoService service;
     private final Logger logger = LoggerFactory.getLogger(FunkoController.class);
 
     @Autowired
-    public FunkoController(FunkoRepositoryImpl repository, FunkoMapper mapper) {
-        this.repository = repository;
-        this.mapper = mapper;
+    public FunkoController(FunkoService service) {
+        this.service = service;
     }
 
     @Override
     @GetMapping
     public ResponseEntity<List<Funko>> getAll() {
         logger.info("Obteniendo todos los Funkos");
-        List<Funko> funkos = repository.findAll();
+        List<Funko> funkos = service.findAll();
         return ResponseEntity.ok(funkos);
     }
 
@@ -41,7 +38,7 @@ public class FunkoController implements Controller<Funko, UUID> {
     @GetMapping("/{id}")
     public ResponseEntity<Funko> getById(@PathVariable UUID id) {
         logger.info("Obteniendo Funko con id: {}", id);
-        Funko funko = repository.findById(id);
+        Funko funko = service.findById(id);
         if (funko != null) {
             return ResponseEntity.ok(funko);
         } else {
@@ -52,24 +49,22 @@ public class FunkoController implements Controller<Funko, UUID> {
 
     @Override
     @PostMapping
-    public ResponseEntity<Funko> create(@RequestBody FunkoDto funkoDto) {
-        logger.info("Creando nuevo Funko: {}", funkoDto);
-        Funko funko = mapper.toFunko(funkoDto);
-        Funko savedFunko = repository.save(funko);
+    public ResponseEntity<Funko> create(@RequestBody FunkoDto dto) {
+        logger.info("Creando nuevo Funko: {}", dto);
+        Funko savedFunko = service.save(dto);
         return ResponseEntity.ok(savedFunko);
     }
 
     @Override
     @PutMapping("/{id}")
-    public ResponseEntity<Funko> update(@PathVariable UUID id, @RequestBody FunkoDto funkoDto) {
+    public ResponseEntity<Funko> update(@PathVariable UUID id, @RequestBody FunkoDto dto) {
         logger.info("Actualizando Funko con id: {}", id);
-        if (repository.findById(id) == null) {
+        if (service.findById(id) == null) {
             logger.warn(FUNKO_NOT_FOUND, id);
             return ResponseEntity.notFound().build();
         }
-        Funko funko = mapper.toFunko(funkoDto);
-        funko.setId(id);
-        Funko updatedFunko = repository.save(funko);
+        Funko updatedFunko = service.save(dto);
+        updatedFunko.setId(id);
         return ResponseEntity.ok(updatedFunko);
     }
 
@@ -77,7 +72,7 @@ public class FunkoController implements Controller<Funko, UUID> {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable UUID id) {
         logger.info("Eliminando Funko con id: {}", id);
-        Funko funko = repository.deleteById(id);
+        Funko funko = service.deleteById(id);
         if (funko != null) {
             return ResponseEntity.noContent().build();
         } else {
