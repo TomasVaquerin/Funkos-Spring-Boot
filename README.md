@@ -7,9 +7,6 @@
 - [x] Base del codigo
 - [ ] Test
 
-[icono]: https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/icons/modules/generatedSourceRoot.svg
-## Estructura del Proyecto
-
 ## Estructura del Proyecto
 
 <details open>
@@ -27,27 +24,28 @@
                 <details open>
                   <summary><img src="https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/icons/modules/generatedSourceRoot.svg" alt="Icono" width="16" height="16"> common</summary>
                   <ul>
-                    <li><img src="https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/icons/fileTypes/java.svg" alt="Icono" width="16" height="16"> Controller.java</li>
-                    <li><img src="https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/icons/fileTypes/java.svg" alt="Icono" width="16" height="16"> Repository.java</li>
+                    <img src="https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/glyphs/expui/nodes/interface.svg" alt="Icono" width="16" height="16"> Controller.java
+                    </br>
+                    <img src="https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/glyphs/expui/nodes/interface.svg" alt="Icono" width="16" height="16"> Repository.java
                   </ul>
                 </details>
                 <details open>
                   <summary><img src="https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/icons/modules/generatedSourceRoot.svg" alt="Icono" width="16" height="16"> funkos</summary>
                   <ul>
                     <details open>
-                      <summary><img src="https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/icons/modules/generatedSourceRoot.svg" alt="Icono" width="16" height="16"> dto</summary>
+                      <summary><img src="https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/icons/nodes/models.svg" alt="Icono" width="16" height="16"> dto</summary>
                       <ul>
-                        <li><img src="https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/icons/fileTypes/java.svg" alt="Icono" width="16" height="16"> DtoClass.java</li>
+                        <li><img src="https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/icons/nodes/models.svg" alt="Icono" width="16" height="16"> DtoClass.java</li>
                       </ul>
                     </details>
                     <details open>
-                      <summary><img src="https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/icons/modules/generatedSourceRoot.svg" alt="Icono" width="16" height="16"> controllers</summary>
+                      <summary><img src="https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/icons/plugins/ruby/rails/projectView/controllersFolder.svg" alt="Icono" width="16" height="16"> controllers</summary>
                       <ul>
                         <li><img src="https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/icons/fileTypes/java.svg" alt="Icono" width="16" height="16"> ControllerClass.java</li>
                       </ul>
                     </details>
                     <details open>
-                      <summary><img src="https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/icons/modules/generatedSourceRoot.svg" alt="Icono" width="16" height="16"> models</summary>
+                      <summary><img src="https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/icons/nodes/models.svg" alt="Icono" width="16" height="16"> models</summary>
                       <ul>
                         <li><img src="https://raw.githubusercontent.com/AtomMaterialUI/a-file-icon-idea/88b103c1b339da467e260823d8fe198a243c41d8/common/src/main/resources/icons/fileTypes/java.svg" alt="Icono" width="16" height="16"> ModelClass.java</li>
                       </ul>
