@@ -55,14 +55,14 @@
                         <details>
                           <summary><img src="https://raw.githubusercontent.com/TomasVaquerin/icons/c295429d3f4c3a3241f73ec585c2bfeb613914ed/folders/error.svg" alt="exception"> exception</summary>
                           <ul>
-                            <img src="https://raw.githubusercontent.com/TomasVaquerin/icons/d4b34d5541590895b0faec4cabd687a58e8d97a7/files/class.svg" alt="BadRequest"> BadRequest
+                            <img src="https://raw.githubusercontent.com/TomasVaquerin/icons/f842aee70ccaa18cfc8b2497f9366160237ebcfb/files/excp.svg" alt="BadRequest"> BadRequest
                             <br>
-                            <img src="https://raw.githubusercontent.com/TomasVaquerin/icons/d4b34d5541590895b0faec4cabd687a58e8d97a7/files/class.svg" alt="NotFound"> NotFound
+                            <img src="https://raw.githubusercontent.com/TomasVaquerin/icons/f842aee70ccaa18cfc8b2497f9366160237ebcfb/files/excp.svg" alt="NotFound"> NotFound
                             <br>
-                            <img src="https://raw.githubusercontent.com/TomasVaquerin/icons/d4b34d5541590895b0faec4cabd687a58e8d97a7/files/class.svg" alt="UuidError"> UuidError
+                            <img src="https://raw.githubusercontent.com/TomasVaquerin/icons/f842aee70ccaa18cfc8b2497f9366160237ebcfb/files/excp.svg" alt="UuidError"> UuidError
                           </ul>
                         </details>
-                        <img src="https://raw.githubusercontent.com/TomasVaquerin/icons/d4b34d5541590895b0faec4cabd687a58e8d97a7/files/class.svg" alt="Exception"> Exception
+                        <img src="https://raw.githubusercontent.com/TomasVaquerin/icons/f842aee70ccaa18cfc8b2497f9366160237ebcfb/files/error.svg" alt="Exception"> Exception
                       </ul>
                     </details>
                     <details>
