@@ -10,4 +10,6 @@ public interface Service<T, I, D> {
     List<T> findAll();
 
     T deleteById(I id);
+
+    T update(I id, D dto);
 }

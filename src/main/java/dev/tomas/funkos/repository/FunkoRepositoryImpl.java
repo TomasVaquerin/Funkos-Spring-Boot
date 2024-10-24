@@ -29,4 +29,13 @@ public class FunkoRepositoryImpl implements FunkoRepository {
     public Funko deleteById(UUID id) {
         return funkos.remove(id);
     }
+
+    @Override
+    public Funko update(UUID id, Funko f) {
+        if (funkos.containsKey(id)) {
+            funkos.put(id, f);
+            return f;
+        }
+        return null;
+    }
 }
