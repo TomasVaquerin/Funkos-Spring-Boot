@@ -17,7 +17,6 @@ public class FunkoMapper {
         funko.setPrecio(dto.getPrecio());
         funko.setCrateAt(LocalDateTime.now());
         funko.setUpdateAt(LocalDateTime.now());
-
         return funko;
     }
 
