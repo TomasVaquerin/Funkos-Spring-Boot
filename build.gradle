@@ -31,6 +31,9 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     // Cache
     implementation("org.springframework.boot:spring-boot-starter-cache")
+
+    // Validación
+    implementation("org.springframework.boot:spring-boot-starter-validation")
 }
 
 tasks.named('test') {

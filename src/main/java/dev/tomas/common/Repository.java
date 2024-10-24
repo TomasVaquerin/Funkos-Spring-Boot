@@ -1,5 +1,7 @@
 package dev.tomas.common;
 
+import dev.tomas.funkos.models.Funko;
+
 import java.util.List;
 
 public interface Repository<T, I> {

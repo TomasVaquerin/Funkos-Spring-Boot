@@ -15,6 +15,9 @@ public class FunkoMapper {
         funko.setNombre(dto.getNombre());
         funko.setTipo(dto.getTipo());
         funko.setPrecio(dto.getPrecio());
+        funko.setCrateAt(LocalDateTime.now());
+        funko.setUpdateAt(LocalDateTime.now());
+
         return funko;
     }
 
@@ -22,6 +25,7 @@ public class FunkoMapper {
         funko.setNombre(dto.getNombre());
         funko.setTipo(dto.getTipo());
         funko.setPrecio(dto.getPrecio());
+        funko.getCrateAt();
         funko.setUpdateAt(LocalDateTime.now());
         return funko;
     }

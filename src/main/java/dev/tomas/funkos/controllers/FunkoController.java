@@ -4,20 +4,25 @@ import dev.tomas.common.Controller;
 import dev.tomas.funkos.dto.FunkoDto;
 import dev.tomas.funkos.models.Funko;
 import dev.tomas.funkos.service.FunkoService;
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @RestController
 @RequestMapping("/funkos")
 public class FunkoController implements Controller<Funko, UUID> {
     private static final String FUNKO_NOT_FOUND = "Funko con id: {} no encontrado";
-
     private final FunkoService service;
     private final Logger logger = LoggerFactory.getLogger(FunkoController.class);
 
@@ -49,7 +54,7 @@ public class FunkoController implements Controller<Funko, UUID> {
 
     @Override
     @PostMapping
-    public ResponseEntity<Funko> create(@RequestBody FunkoDto dto) { ///@Validator para validar que los datos estan bien
+    public ResponseEntity<Funko> create(@Valid @RequestBody FunkoDto dto) {
         logger.info("Creando nuevo Funko: {}", dto);
         Funko savedFunko = service.save(dto);
         return ResponseEntity.ok(savedFunko);
@@ -57,7 +62,7 @@ public class FunkoController implements Controller<Funko, UUID> {
 
     @Override
     @PutMapping("/{id}")
-    public ResponseEntity<Funko> update(@PathVariable UUID id, @RequestBody FunkoDto dto) {
+    public ResponseEntity<Funko> update(@PathVariable  UUID id, @RequestBody  @Valid FunkoDto dto) {
         logger.info("Actualizando Funko con id: {}", id);
         if (service.findById(id) == null) {
             logger.warn(FUNKO_NOT_FOUND, id);
@@ -81,5 +86,16 @@ public class FunkoController implements Controller<Funko, UUID> {
     }
 
 
-    //poner el metodo que tice que los campos validados y errors
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public Map<String, String> handleValidationExceptions(
+            MethodArgumentNotValidException ex) {
+        Map<String, String> errors = new HashMap<>();
+        ex.getBindingResult().getAllErrors().forEach((error) -> {
+            String fieldName = ((FieldError) error).getField();
+            String errorMessage = error.getDefaultMessage();
+            errors.put(fieldName, errorMessage);
+        });
+        return errors;
+    }
 }

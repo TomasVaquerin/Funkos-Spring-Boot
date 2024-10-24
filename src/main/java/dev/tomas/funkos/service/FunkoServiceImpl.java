@@ -34,7 +34,12 @@ public class FunkoServiceImpl implements FunkoService {
     public Funko save(FunkoDto dto) {
         logger.info("Guardando nuevo Funko: {}", dto);
         UUID id = UUID.randomUUID();
+
+        Long nextNumero = (long) (funkoRepository.findAll().size() + 1);
+
         Funko nuevoFunko = funkoMapper.toFunko(id, dto);
+        nuevoFunko.setNumero(nextNumero);
+
         return funkoRepository.save(nuevoFunko);
     }
 
@@ -62,6 +67,7 @@ public class FunkoServiceImpl implements FunkoService {
         logger.info("Eliminando Funko con id: {}", id);
         return funkoRepository.deleteById(id);
     }
+
     @Override
     @CachePut(key = "#id")
     public Funko update(UUID id, FunkoDto dto) {
